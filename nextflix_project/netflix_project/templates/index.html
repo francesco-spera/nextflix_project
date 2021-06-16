@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Netflix_project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon-96x96.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="static/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="static/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<section id="header">
+		<div class="inner">
+			<span class="icon solid major fa-film"></span>
+			<h1>Hi, what do you want to see today?</h1>
+				<!-- Form -->
+				<form action="/search" method="POST">
+					<td><input type="text" , id="tags" , name="tag_name" placeholder="Title" autocomplete="off"
+					style="background-color: rgb(255, 255, 255);"><td>
+					<td><button type="submit"><i class="fa fa-search"></i></button><td>
+				</form>
+			<a href="search_advanced" style="text-decoration: none;">ADVANCED SEARCH</a>
+			<ul class="actions special">
+				<li><a href="#one" class="button scrolly">Statistics</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- One -->
+	<section id="one" class="main style1 special">
+		<div class="container">
+			<header class="major">
+				<h2>Netflix data</h2>
+			</header>
+			<div class="row gtr-150">
+				<div class="col-4 col-12-medium">
+					<span class="image fit"><img src="static/images/img_1.jpg" alt="" /></span>
+					<h3>Films & TV series</h3>
+					<p>Check how many movies and how many TV series are in the catalog.</p>
+					<ul class="actions special">
+						<li><a href="graphic_type" class="button">More</a></li>
+					</ul>
+				</div>
+				<div class="col-4 col-12-medium">
+					<span class="image fit"><img src="static/images/img_2.jpg" alt="" /></span>
+					<h3>Rating</h3>
+					<p>Check which titles are suitable for your age group.</p>
+					<ul class="actions special">
+						<li><a href="graphic_rating" class="button">More</a></li>
+					</ul>
+				</div>
+				<div class="col-4 col-12-medium">
+					<span class="image fit"><img src="static/images/img_3.jpg" alt="" /></span>
+					<h3>Covid Year</h3>
+					<p>Check how many movies and how many TV series were released in the covid year.</p>
+					<ul class="actions special">
+						<li><a href="graphic_covid_year" class="button">More</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<section id="footer">
+		<ul class="copyright">
+			<li>&copy; Project database II</li>
+			<li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+		</ul>
+	</section>
+
+	<!-- Scripts -->
+	<script>
+	  $( function() {
+		var availableTags = [
+			{% for title in titles %}
+				"{{title.title}}",
+			{% endfor %}
+		];
+		$( "#tags" ).autocomplete({
+		  source: availableTags
+		});
+	  } );
+  	</script>
+	<script src="static/js/breakpoints.min.js"></script>
+	<script src="static/js/util.js"></script>
+	<script src="static/js/main.js"></script>
+
+</body>
+
+</html>
