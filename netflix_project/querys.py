@@ -2,6 +2,15 @@ from sqlite3 import DatabaseError
 from flask import logging
 import connection_pool as cp
 
+
+def find_all():
+	try:
+		con = cp.connection_pool()
+		results = list(con.find())
+		return results
+	except DatabaseError as e:
+		logging.warning('DB exception: %s' % e)
+		
 # searching query
 
 def search_by_title(title):
