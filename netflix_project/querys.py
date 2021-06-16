@@ -116,13 +116,13 @@ def count_by_rating():
 		counters['PG-13'] = results
 	except DatabaseError as e:
 		logging.warning('DB exception: %s' % e)
-	return results
+	return counters
 
-def count_by_covid_year(type):
+def count_by_covid_year():
 	try:
 		con = cp.connection_pool()
-		results_2020 = len(list(con.find({'$and':[{'type': type}, {'release_year': '2020'}]}))
-		results_2019 = len(list(con.find({'$and':[{'type': type}, {'release_year': '2019'}]}))
+		results_2020 = len(list(con.find({'release_year': '2020'})))
+		results_2019 = len(list(con.find({'release_year': '2019'})))
 		counters = [results_2020, results_2019]
 	except DatabaseError as e:
 		logging.warning('DB exception: %s' % e)
