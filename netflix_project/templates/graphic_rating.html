@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Netflix_project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon-96x96.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="static/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="static/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<section id="header">
+		<h1>Rating</h1>
+	</section>
+
+	<!-- One -->
+	<section id="one" class="main style1 special">
+
+	</section>
+
+	<!-- Footer -->
+	<section id="footer">
+		<ul class="copyright">
+			<li>&copy; Progect database II</li>
+			<li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+		</ul>
+	</section>
+
+	<!-- Scripts
+	<script>
+		// bar chart data
+		  var barData = {
+			labels : [
+			  {% for item in labels %}
+			   "{{ item }}",
+			  {% endfor %}
+		],
+
+			datasets : [{
+			  fillColor: "rgba(151,187,205,0.2)",
+			  strokeColor: "rgba(151,187,205,1)",
+			  pointColor: "rgba(151,187,205,1)",
+			  data : [
+				{% for item in values %}
+				   "{{ item }}",
+				  {% endfor %}
+			]
+			  }
+			]
+		  }
+
+		 // get bar chart canvas
+		 var mychart = document.getElementById("chart").getContext("2d");
+
+		   steps = 10
+		   max = 10
+
+		 // draw bar chart
+		 new Chart(mychart).Bar(barData, {
+		   scaleOverride: true,
+		   scaleSteps: steps,
+		   scaleStepWidth: Math.ceil(max / steps),
+		   scaleStartValue: 0,
+		   scaleShowVerticalLines: true,
+		   scaleShowGridLines : true,
+		   barShowStroke : true,
+		   scaleShowLabels: true
+		   }
+		 );
+	</script>-->
+	<script src="static/js/breakpoints.min.js"></script>
+	<script src="static/js/util.js"></script>
+	<script src="static/js/main.js"></script>
+
+</body>
+
+</html>

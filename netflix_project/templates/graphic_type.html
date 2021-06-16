@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Netflix_project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon-96x96.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
+		type="text/css" />
+	<link rel="stylesheet" href="static/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="static/css/noscript.css" />
+	</noscript>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<section id="header">
+		<h1>Films & TV series</h1>
+	</section>
+
+	<!-- One -->
+	<section class="main style1 special">
+		<div class="container">
+			<div class="row gtr-150">
+				<div class="col-6 col-12-medium">
+					<canvas id="chart" width="600" height="400"></canvas>
+				</div>
+				<div class="col-6 col-12-medium">
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<section id="footer">
+		<ul class="copyright">
+			<li>&copy; Progect database II</li>
+			<li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+		</ul>
+	</section>
+
+	<!-- Scripts -->
+	<script>
+		var pieData = [
+			{% for item, label, colors in set %}
+			{
+				value: {{ item }},
+				label: "{{ label }}",
+					color : "{{ colors }}",
+			},
+			{% endfor %}
+		 ];
+		// get bar chart canvas
+		var mychart = document.getElementById("chart").getContext("2d");
+		steps = 10
+		max = 10
+
+		// draw pie chart
+		new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData);
+		//var legend = Pie.generateLegend();
+		//$('#chart').append(legend);
+	</script>
+	<script src="static/js/breakpoints.min.js"></script>
+	<script src="static/js/util.js"></script>
+	<script src="static/js/main.js"></script>
+
+</body>
+
+</html>
