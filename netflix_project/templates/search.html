@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Netflix_project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon-96x96.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="static/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="static/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<section style="background-color: #a45c4f; text-align: center; padding: 0.3em;">
+		{% if info %}
+		<h1>Information</h1>
+		{% else %}
+		<h1>Error</h1>
+		<!--<a href="/index.html"><span class="icon solid minor fa-home"></span>HOME</a>-->
+		{% endif %}
+	</section>
+
+	<!-- One -->
+	<section id="one" class="main style1 special">
+		{% if info %}
+		<div class="container">
+			<div class="row gtr-150">
+				<div class="col-6 col-12-medium">
+					<span class="image fit"><img src="static/images/popcorn.jpg" alt="" /></span>
+				</div>
+				<div class="col-6 col-12-medium">
+					<h2 style="font-weight: bold;">{{ info[0].title }}</h2>
+					<p>TYPE: {{ info[0].type }}</p>
+					<p>DIRECTOR: {{ info[0].director }}</p>
+					<p>CAST: {{ info[0].cast }}</p>
+					<p>COUNTRY: {{ info[0].country }}</p>
+					<p>RELEASE YEAR: {{ info[0].release_year }}</p>
+					<p>DURATION: {{ info[0].duration }}</p>
+				</div>
+			</div>
+		</div>
+		{% else %}
+		<div class="row gtr-150">
+			<div class="col-6 col-12-medium">
+				<h2 style="font-weight: bold;">Title no available!</h2>
+				<p>Go back to <a href="/">home</a> and look for another title</p>
+			</div>
+			<div class="col-6 col-12-medium">
+				<span class="image fit"><img src="static/images/error.jpg" alt="imgError" /></span>
+			</div>
+		</div>
+		{% endif %}
+	</section>
+
+	<!-- Footer -->
+	<section id="footer">
+		<ul class="copyright">
+			<li>&copy; Progect database II</li>
+			<li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+		</ul>
+	</section>
+
+	<!-- Scripts -->
+	<script src="static/js/breakpoints.min.js"></script>
+	<script src="static/js/util.js"></script>
+	<script src="static/js/main.js"></script>
+
+</body>
+
+</html>
