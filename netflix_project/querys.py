@@ -1,7 +1,8 @@
 from sqlite3 import DatabaseError
 from flask import logging
 import connection_pool as cp
-
+		
+# searching query
 
 def find_all():
 	try:
@@ -10,8 +11,6 @@ def find_all():
 		return results
 	except DatabaseError as e:
 		logging.warning('DB exception: %s' % e)
-		
-# searching query
 
 def search_by_title(title):
 	try:
@@ -97,7 +96,7 @@ def count_by_type():
 		counters['TV Show'] = results
 	except DatabaseError as e:
 		logging.warning('DB exception: %s' % e)
-	return results
+	return counters
 
 def count_by_rating():
 	counters = {}
@@ -115,4 +114,4 @@ def count_by_rating():
 		counters['PG-13'] = results
 	except DatabaseError as e:
 		logging.warning('DB exception: %s' % e)
-	return results
+	return counters
