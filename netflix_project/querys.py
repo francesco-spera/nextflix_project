@@ -69,6 +69,13 @@ def search_by_type_duraton(type, duration):
 		logging.warning('DB exception: %s' % e)
 	return results
 
+def search_by_year_2020(type):
+	try:
+		con = cp.connection_pool()
+		results = con.find({'$and':[{'type': type}, {'release_year': '2020'}]})
+	except DatabaseError as e:
+		logging.warning('DB exception: %s' % e)
+	return results
 
 # counting query
 
