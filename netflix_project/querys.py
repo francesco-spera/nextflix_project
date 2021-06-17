@@ -88,37 +88,34 @@ def count_by_duration(duration):
 	return results
 
 def count_by_type():
-	results = []
+	counters = []
 	try:
 		con = cp.connection_pool()
 		results_movie = len(list(con.find({'type': 'Movie'})))
 		#counters['Movie'] = results
 		results_show = len(list(con.find({'type': 'TV Show'})))
 		#counters['TV Show'] = results
-		results = [results_movie, results_show]
+		counters = [results_movie, results_show]
 	except DatabaseError as e:
 		logging.warning('DB exception: %s' % e)
-	return results
+	return counters
 
 def count_by_rating():
-	counters = {}
+	counters = []
 	try:
 		con = cp.connection_pool()
-		results = len(list(con.find({'rating': 'TV-MA'})))
-		counters['TV-MA'] = results
-		results = len(list(con.find({'rating': 'TV-14'})))
-		counters['TV-14'] = results
-		results = len(list(con.find({'rating': 'TV-PG'})))
-		counters['TV-PG'] = results
-		results = len(list(con.find({'rating': 'R'})))
-		counters['R'] = results
-		results = len(list(con.find({'rating': 'PG-13'})))
-		counters['PG-13'] = results
+		results_1 = len(list(con.find({'rating': 'TV-MA'})))
+		results_2 = len(list(con.find({'rating': 'TV-14'})))
+		results_3 = len(list(con.find({'rating': 'TV-PG'})))
+		results_4 = len(list(con.find({'rating': 'R'})))
+		results_5 = len(list(con.find({'rating': 'PG-13'})))
+		counters = [results_1, results_2, results_3, results_4, results_5]
 	except DatabaseError as e:
 		logging.warning('DB exception: %s' % e)
 	return counters
 
 def count_by_covid_year():
+	counters = []
 	try:
 		con = cp.connection_pool()
 		results_2020 = len(list(con.find({'release_year': '2020'})))
