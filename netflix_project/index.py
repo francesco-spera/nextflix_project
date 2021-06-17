@@ -5,8 +5,8 @@ import querys as q
 app = Flask(__name__)
 
 colors = [
-    "#E74C3C", "#F1C40F", "#7FB3D5", "#C0392B",
-    "#ABCDEF", "#F5B041", "#52BE80", "#AAB7B8"]
+    "#E74C3C", "#F1C40F", "#52BE80", "#AAB7B8",
+    "#ABCDEF", "#F5B041", "#7FB3D5", "#C0392B"]
 
 @app.route('/')
 def index():
