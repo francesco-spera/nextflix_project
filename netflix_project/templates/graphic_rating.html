@@ -31,12 +31,15 @@
 				<div class="col-6 col-12-medium">
 					<canvas id="chart" width="600" height="400"></canvas>
 				</div>
-				<div class="col-6 col-12-medium">
-					<p><span class="icon solid major fa-palette" style="color: #E74C3C;"></span>TV-MA</p>
-					<p><span class="icon solid major fa-palette" style="color: #F1C40F;"></span>TV-14</p>
-					<p><span class="icon solid major fa-palette" style="color: #7FB3D5;"></span>TV-PG</p>
-					<p><span class="icon solid major fa-palette" style="color: #C0392B;"></span>R</p>
-					<p><span class="icon solid major fa-palette" style="color: #52BE80;"></span>PG-13</p>
+				<div class="col-6 col-12-medium" style="text-align: left">
+					<p><span class="icon solid minor fa-palette" style="color: #E74C3C;"></span>TV MA:This program is specifically
+						designed to be viewed by adults and therefore may be unsuitable for children under 17</p>
+					<p><span class="icon solid minor fa-palette" style="color: #F1C40F;"></span>TV-14: This program contains some
+						material that many parents would find unsuitable for children under 14 years of age</p>
+					<p><span class="icon solid minor fa-palette" style="color: #7FB3D5;"></span>TV PG: This program contains material
+						that parents may find unsuitable for younger children</p>
+					<p><span class="icon solid minor fa-palette" style="color: #C0392B;"></span>R: restricted, only for children over 12</p>
+					<p><span class="icon solid minor fa-palette" style="color: #ABCDEF;"></span>PG-13: for children over 13</p>
 				</div>
 			</div>
 		</div>
@@ -68,8 +71,6 @@
 
 		// draw pie chart
 		new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData);
-		//var legend = Pie.generateLegend();
-		//$('#chart').append(legend);
 	</script>
 	<script src="static/js/breakpoints.min.js"></script>
 	<script src="static/js/util.js"></script>
